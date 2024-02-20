@@ -9,14 +9,27 @@
 
 </h1>
 
-<br>
--- Sobre
+• Sobre
 ===============
 
 <p> Projeto que possibilita a criação de listas, você pode adiconar suas tarefas e olhar quais estão concluídas, ou quais ainda estão pendentes.</p>
 
-<br>
--- Objetivo
+
+• Objetivo
 ===============
 
-<p> Criei esse projeto com a inteção de aperfeiçoar minhas teorias, estdudar é uma tarefa muito importante, porém praticar é am</p>
+<p> Criei esse projeto com a inteção de aperfeiçoar minhas teorias, estudar é uma tarefa muito importante, porém praticar é melhor ação. </p>
+
+> [!NOTE]
+>A experiência que se adquiri ao passar por problemas inesperados, não estão presentes em nenhum livro...
+
+
+• Documentação
+===============
+
+<ul>
+  <li> <a href="https://react.dev/learn">:computer: React</a>: Responsável pela interface do projeto. (FrontEnd) </li>  
+  <li> <a href="https://nodejs.org/en/learn/getting-started/introduction-to-nodejs"> :wrench: NodeJs</a>: Responsável pela lógica do sistema. (FrontEnd) </li>
+  <li> <a href="https://www.mongodb.com/docs/">:page_facing_up: MongoDB </a>: Responsável pelo armazenamento dos dados. </li>
+  
+</ul>
