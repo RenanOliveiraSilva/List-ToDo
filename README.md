@@ -4,3 +4,7 @@
   <img src="https://img.shields.io/static/v1?label=List-To-Do&message=Training Project&color=9370DB&style=for-the-badge" align="Center" />  
 </p>
 
+<p align="center">
+  <p> Sobre •  Objetivo • Documentação </p>
+
+</p>
