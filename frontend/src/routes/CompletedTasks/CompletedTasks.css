@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.tableTasksCompleted {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.1em;
+}
+
+td, th {
+    border: 1px solid #d8cfda;
+    text-align: left;
+    padding: 10px;
+}
+
+.tableTasksCompleted tbody:nth-child(even) {
+    background-color: #92dda6;
+}
+
+#Delete {
+    text-align: center;
+}
+
+hr {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
