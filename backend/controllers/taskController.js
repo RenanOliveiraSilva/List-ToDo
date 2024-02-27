@@ -44,6 +44,7 @@ const taskController = {
             console.log(error);
         }
     },
+    //Função para listar todas as tarefas concluídas
     getTaskCompleted: async(req, res) => {
         try {
             const status = req.params.status;
@@ -57,6 +58,7 @@ const taskController = {
             
         }
     },
+    //Função para excluir as tarefas
     deleteTask: async(req, res) => {
         try {
             const id = req.params.id;
@@ -77,6 +79,23 @@ const taskController = {
             
         }
 
+    },
+    //Função para modificar a task como concluída
+    completTask: async(req, res) => {
+        try {
+            const id = req.params.id;
+            const task = await TaskModel.findById(id);
+           
+            if (!task) {
+                res.status(404).json({msg: "Serviço não encontrado"});
+                return;
+            }
+
+            const updatedTask = await TaskModel.findByIdAndUpdate()
+
+        } catch (error) {
+            console.log(error)
+        }
     }
 
 }
