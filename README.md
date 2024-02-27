@@ -29,7 +29,7 @@
 
 <ul>
   <li> <a href="https://react.dev/learn">:computer: React</a>: Responsável pela interface do projeto. (FrontEnd) </li>  
-  <li> <a href="https://nodejs.org/en/learn/getting-started/introduction-to-nodejs"> :wrench: NodeJs</a>: Responsável pela lógica do sistema. (FrontEnd) </li>
+  <li> <a href="https://nodejs.org/en/learn/getting-started/introduction-to-nodejs"> :wrench: NodeJs</a>: Responsável pela lógica do sistema. (BackEnd) </li>
   <li> <a href="https://www.mongodb.com/docs/">:page_facing_up: MongoDB </a>: Responsável pelo armazenamento dos dados. </li>
   
 </ul>
