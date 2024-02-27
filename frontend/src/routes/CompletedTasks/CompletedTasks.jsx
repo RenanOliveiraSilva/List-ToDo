@@ -41,7 +41,7 @@ function CompletedTasks() {
                         <th>Nome</th>
                         <th>Prioridade</th>
                         <th>Status</th>
-                        <th>Editar</th>
+                        <th>Excluir</th>
                     </tr>
                 </thead>
                 {tasks.map((task) => (
@@ -51,6 +51,7 @@ function CompletedTasks() {
                             <td>{task.priority}</td>
                             <td>Concluída</td>
                             <td className='Edit'><MdEditSquare size={'1.5em'}/></td>
+
                         </tr>
                     </tbody>
                     ) 

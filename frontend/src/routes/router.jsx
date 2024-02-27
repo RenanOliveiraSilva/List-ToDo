@@ -8,7 +8,6 @@ import AllTasks from "./AllTasks/AllTasks.jsx";
 import CompletedTasks from "./CompletedTasks/CompletedTasks.jsx";
 import PendingTasks from "./PendingTasks/PendingTasks.jsx";
 
-
 const router = createBrowserRouter([
   {
     element: <App />,
@@ -36,4 +35,3 @@ const router = createBrowserRouter([
 ]);
 
 export default router;
-

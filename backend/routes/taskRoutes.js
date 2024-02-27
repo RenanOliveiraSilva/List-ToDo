@@ -17,5 +17,8 @@ router.route("/tasks/:status").get((req, res) => taskController.getTaskCompleted
 // 4 - Rota de exclusão de task 
 router.route("/tasks/:id").delete((req, res) => taskController.deleteTask(req, res));
 
+// 5 - Rota de atualização para task concluída
+router.route("/tasks/editTask/:id").put((req, res) => taskController.updateTask(req, res));
+
 //Exportação para o main
 module.exports = router;
