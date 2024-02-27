@@ -14,8 +14,8 @@ const taskController = {
             }
 
             //Verificação
-            if (task.name && task.priority) {
-                console.log("Parei aq")
+            if (!task.name && !task.priority) {
+                res.status(400).json({response, msg: "Task criada!"});
             }
 
             //Registro inserido no banco -> O mongoose é responsável por esse Create 
@@ -80,6 +80,7 @@ const taskController = {
         }
 
     },
+<<<<<<< HEAD
     //Função para modificar a task como concluída
     completTask: async(req, res) => {
         try {
@@ -92,6 +93,33 @@ const taskController = {
             }
 
             const updatedTask = await TaskModel.findByIdAndUpdate()
+=======
+    updateTask: async (req, res) => {
+        try {
+            const id = req.params.id;
+
+            const makedTask = {
+                name: null,
+                priority: null,
+                status: 2
+            }
+
+            if (!makedTask) {
+                console.log("Tarefa não encontrada! ")
+                res.status(404).json({msg: "Serviço não encontrado"});
+
+            }
+
+            const updatedTask = TaskModel.findByIdAndUpdate(id, makedTask);
+
+            if (!updatedTask) {
+                console.log("Tarefa não atualizada! ")
+                res.status(404).json({msg: "Serviço não encontrado"});
+
+            }
+
+            res.status(200).json({updatedTask, msg: "Tarefa atualizada com concluída"});
+>>>>>>> refs/remotes/origin/main
 
         } catch (error) {
             console.log(error)

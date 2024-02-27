@@ -40,7 +40,8 @@ function PendingTasks() {
                         <th>Nome</th>
                         <th>Prioridade</th>
                         <th>Status</th>
-                        <th>Editar</th>
+                        <th>Concluir</th>
+                        <th>Excluir</th>
                     </tr>
                 </thead>
                 {tasks.map((task) => (
@@ -50,6 +51,7 @@ function PendingTasks() {
                             <td>{task.priority}</td>
                             <td>Pendente</td>
                             <td className='Edit'><MdEditSquare size={'1.5em'}/></td>
+                            <td>Pendente</td>
                         </tr>
                     </tbody>
                     ) 

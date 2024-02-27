@@ -8,6 +8,19 @@ const AddTask = () => {
   const navigate = useNavigate();
   const btnSubmit = document.getElementById('submit');
 
+  function confirmSubmit(date) {
+
+    if ( !date ) {
+      alert("Preencha todos os campos corretamente !!!");
+      return;
+
+    }
+
+    alert("Tarefa Adicionada com sucesso!!!");
+    navigate("/");
+
+  }
+
   const [ task, setTask ] = useState({
     name: '',
     priority: 1
@@ -30,11 +43,7 @@ const AddTask = () => {
 
     )
     .then(function (response) {
-      const status = response.status;
-      console.log(status);
-      alert("Tarefa Adicionada com sucesso!!!");
-
-      navigate("/");
+        confirmSubmit(response);
 
     })
     .catch(function (error) {
