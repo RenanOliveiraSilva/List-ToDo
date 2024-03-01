@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect} from 'react';
 import axios from 'axios';
-import { MdEditSquare } from "react-icons/md";
+import { MdDelete, MdRefresh } from "react-icons/md";
 import { MdOutlinePlaylistAddCheck } from "react-icons/md";
 
 import "./CompletedTasks.css";
@@ -23,6 +23,21 @@ function CompletedTasks() {
         }
 
     }
+
+  //Excluindo tasks no banco de dados
+    async function deleteTask(id) {
+        
+        try {
+            const response = await axios.delete(`http://localhost:3000/api/tasks/${id}`);
+            location.reload();
+            alert("Tarefa deletada com sucesso ");
+
+        } catch (error) {
+            console.log(error);
+
+        }
+    }
+
 
     useEffect(() => {
         getTask();
@@ -46,11 +61,12 @@ function CompletedTasks() {
                 </thead>
                 {tasks.map((task) => (
                     <tbody  key={task._id}>
+                        
                         <tr>
                             <td>{task.name} </td>
                             <td>{task.priority}</td>
                             <td>Concluída</td>
-                            <td className='Edit'><MdEditSquare size={'1.5em'}/></td>
+                            <td className='Edit'> <button id='btnDelete' onClick={() => deleteTask(task._id)}> <MdDelete  color="red" size={'1.5em'}/> </button></td>
 
                         </tr>
                     </tbody>

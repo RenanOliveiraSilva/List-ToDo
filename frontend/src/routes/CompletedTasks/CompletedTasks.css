@@ -28,3 +28,20 @@ hr {
     margin-bottom: 10px;
     margin-top: 10px;
 }
+
+#btnDelete {
+    text-rendering: none;
+    color: none;
+    letter-spacing: none;
+    word-spacing: none;
+    line-height: none;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    line-height: none;
+}
+
