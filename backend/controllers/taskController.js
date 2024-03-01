@@ -44,6 +44,7 @@ const taskController = {
             console.log(error);
         }
     },
+    //Função para buscar todas a tarefas concluídas
     getTaskCompleted: async(req, res) => {
         try {
             const status = req.params.status;
@@ -57,6 +58,7 @@ const taskController = {
             
         }
     },
+    //Função para excluir uma tarefa
     deleteTask: async(req, res) => {
         try {
             const id = req.params.id;
@@ -81,20 +83,25 @@ const taskController = {
     updateTask: async (req, res) => {
         try {
             const id = req.params.id;
+            const filter = { name: "a"};
+            const update = { status: 2};
 
-            const makedTask = {
-                name: null,
-                priority: null,
-                status: 2
-            }
+            // const newTask = {
+            //     status: 2
+            // }
 
-            if (!makedTask) {
-                console.log("Tarefa não encontrada! ")
-                res.status(404).json({msg: "Serviço não encontrado"});
 
-            }
+            // if (!newTask) {
+            //     console.log("Tarefa não encontrada! ")
+            //     res.status(404).json({msg: "Serviço não encontrado"});
 
-            const updatedTask = TaskModel.findByIdAndUpdate(id, makedTask);
+            // }
+
+            const updatedTask = TaskModel.findOneAndUpdate(filter, update, {
+                new: true
+
+            });
+
 
             if (!updatedTask) {
                 console.log("Tarefa não atualizada! ")
