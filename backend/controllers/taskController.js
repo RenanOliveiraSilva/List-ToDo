@@ -45,7 +45,6 @@ const taskController = {
         }
     },
     //Função para buscar todas a tarefas concluídas
-    //Função para listar todas as tarefas concluídas
     getTaskCompleted: async(req, res) => {
         try {
             const status = req.params.status;
@@ -60,7 +59,6 @@ const taskController = {
         }
     },
     //Função para excluir as tarefas
-    //Função para excluir uma tarefa
     deleteTask: async(req, res) => {
         try {
             const id = req.params.id;
@@ -82,9 +80,8 @@ const taskController = {
         }
 
     },
-<<<<<<< HEAD
     //Função para modificar a task como concluída
-    completTask: async(req, res) => {
+    completeTask: async(req, res) => {
         try {
             const id = req.params.id;
             const task = await TaskModel.findById(id);
@@ -94,39 +91,16 @@ const taskController = {
                 return;
             }
 
-            const updatedTask = await TaskModel.findByIdAndUpdate()
-=======
-    updateTask: async (req, res) => {
-        try {
-            const id = req.params.id;
-            const filter = { name: "a"};
-            const update = { status: 2};
+            // const strTask = JSON.parse(task);
 
-            // const newTask = {
-            //     status: 2
-            // }
+            const newTask = {
 
-
-            // if (!newTask) {
-            //     console.log("Tarefa não encontrada! ")
-            //     res.status(404).json({msg: "Serviço não encontrado"});
-
-            // }
-
-            const updatedTask = TaskModel.findOneAndUpdate(filter, update, {
-                new: true
-
-            });
-
-
-            if (!updatedTask) {
-                console.log("Tarefa não atualizada! ")
-                res.status(404).json({msg: "Serviço não encontrado"});
-
+                status: 2,
             }
 
-            res.status(200).json({updatedTask, msg: "Tarefa atualizada com concluída"});
->>>>>>> refs/remotes/origin/main
+            const updatedTask = await TaskModel.findByIdAndUpdate(id, newTask);
+
+            res.status(200).json({task, msg: "Task concluída com sucesso"});
 
         } catch (error) {
             console.log(error)

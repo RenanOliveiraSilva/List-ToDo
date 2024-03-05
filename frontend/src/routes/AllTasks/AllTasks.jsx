@@ -3,8 +3,9 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import "./AllTasks.css";
-import { MdEditSquare } from "react-icons/md";
+import { RiVerifiedBadgeLine } from "react-icons/ri";
 import { MdOutlineFormatListBulleted } from "react-icons/md";
+import { MdDelete } from "react-icons/md";
 
 function AllTasks() {
 
@@ -29,6 +30,34 @@ function AllTasks() {
 
     }
 
+    //Excluindo tasks no banco de dados
+    async function deleteTask(id) {
+        
+        try {
+            const response = await axios.delete(`http://localhost:3000/api/tasks/${id}`);
+            location.reload();
+            alert("Tarefa deletada com sucesso ");
+
+        } catch (error) {
+            console.log(error);
+
+        }
+    }
+
+      //Marcando a tarefa como concluída
+      async function completeTask(id) {
+        
+        try {
+            const response = await axios.put(`http://localhost:3000/api/tasks/editTask/${id}`);
+            location.reload();
+            alert("Tarefa concluída com sucesso ");
+
+        } catch (error) {
+            console.log(error);
+
+        }
+    }
+
     useEffect(() => {
         getTask();
 
@@ -46,7 +75,8 @@ function AllTasks() {
                         <th>Nome</th>
                         <th>Prioridade</th>
                         <th>Status</th>
-                        <th>Editar</th>
+                        <th>Concluir</th>
+                        <th>Excluir</th>
                     </tr>
                 </thead>
                 {tasks.map((task) => (
@@ -55,7 +85,9 @@ function AllTasks() {
                             <td>{task.name} </td>
                             <td>{task.priority}</td>
                             <td>{task.status === 1 ? "Pendente" : "Concluída"} </td>
-                            <td className='Edit'><MdEditSquare size={'1.5em'}/></td>
+                            <td className='Edit'> <button id='btnDelete' onClick={() => completeTask(task._id)}> <RiVerifiedBadgeLine  color="green" size={'1.5em'}/> </button></td>
+                            <td className='Edit'><button id='btnDelete' onClick={() => deleteTask(task._id)}> <MdDelete  color="red" size={'1.5em'}/> </button></td>
+
                         </tr>
                     </tbody>
                     ) 
