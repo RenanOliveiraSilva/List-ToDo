@@ -75,7 +75,6 @@ function AllTasks() {
                         <th>Nome</th>
                         <th>Prioridade</th>
                         <th>Status</th>
-                        <th>Concluir</th>
                         <th>Excluir</th>
                     </tr>
                 </thead>
@@ -85,7 +84,6 @@ function AllTasks() {
                             <td>{task.name} </td>
                             <td>{task.priority}</td>
                             <td>{task.status === 1 ? "Pendente" : "Concluída"} </td>
-                            <td className='Edit'> <button id='btnDelete' onClick={() => completeTask(task._id)}> <RiVerifiedBadgeLine  color="green" size={'1.5em'}/> </button></td>
                             <td className='Edit'><button id='btnDelete' onClick={() => deleteTask(task._id)}> <MdDelete  color="red" size={'1.5em'}/> </button></td>
 
                         </tr>
